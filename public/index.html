@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="euEdgeApp">
 <head>
     <meta charset="UTF-8">
     <title>Eu Edge Test Application</title>
@@ -10,7 +10,69 @@
 </head>
 <body>
 
+<div class="container" ng-controller="mainController">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary add-btn">Add <i class="glyphicon glyphicon-plus"></i> </button>
+        </div>
+    </div>
+    <div class="col-xs-12 table-section">
+        <div class="row head-row">
+                <div class="col-xs-6">
+                    <p>
+                        Name
+                        <br>
+                        (job title)
+                    </p>
 
-<script type="application/javascript" src="../node_modules/angular/angular.min.js"></script>
+                </div>
+                <div class="col-xs-1 add-top">
+                    <p>Age</p>
+                </div>
+                <div class="col-xs-2 add-top">
+                    <p>Nickname</p>
+                </div>
+                <div class="col-xs-2 add-top text-center">
+                    <p>Employee</p>
+                </div>
+                <div class="col-xs-1">
+
+                </div>
+        </div>
+
+        <div class="row list-row" ng-repeat="items in data track by $index">
+            <div class="col-xs-6">
+                <p>
+                    {{items.name}}
+                    <br>
+                    ( {{items.job}} )
+                </p>
+            </div>
+            <div class="col-xs-1 add-top">
+                {{items.age}}
+            </div>
+            <div class="col-xs-2 add-top">
+                {{items.nick}}
+            </div>
+            <div class="col-xs-2 add-top text-center">
+                <input type="checkbox"
+                        ng-model="items.employee"
+                        />
+            </div>
+            <div class="col-xs-1 add-top text-center">
+                <button class="btn btn-small btn-danger"><i class="glyphicon glyphicon-remove"></i> </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 text-section">
+        <textarea class="form-control"></textarea>
+    </div>
+</div>
+
+<script type="text/javascript" src="scripts/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+<script type="text/javascript" src="javascript/app.js"></script>
+<script type="text/javascript" src="javascript/service/mainFactory.js"></script>
+<script type="text/javascript" src="javascript/controller/mainController.js"></script>
 </body>
 </html>
