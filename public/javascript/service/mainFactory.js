@@ -11,13 +11,6 @@ app.factory('mainFactory', function( $http){
                 method: 'GET',
                 url: '/api/listUsers'
             })
-        },
-        postData : function(){
-            return $http({
-                method: 'POST',
-                url: '/api/listUsers',
-                data : myData
-            })
         }
     }
 

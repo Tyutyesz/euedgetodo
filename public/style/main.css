@@ -53,6 +53,14 @@ html, body{
 .custom-modal-body .row{
     margin-top: 10px;
 }
+.custom-error{
+    color: red;
+    font-size: 10px;
+}
+.error-field{
+    border: 1px inset #ac2925;
+
+}
 @media screen and (max-width: 600px){
     html, body{
         font-size: 10px;

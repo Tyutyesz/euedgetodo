@@ -16,14 +16,21 @@ app.controller('modalController', function($scope, $uibModalInstance, $http){
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
+    $scope.notFilled = false;
     $scope.ok = function(){
-        $scope.persons.push($scope.newPerson);
-        $uibModalInstance.dismiss('close');
-    };
-    $scope.teszt = function(){
         var myData = $scope.newPerson;
-        console.log(myData);
-        $http.post('http://localhost:8888/api/listUsers', myData);
+        if(myData.name === ''){
+            $scope.notFilled = true;
+        } else {
+            $scope.notFilled = false;
+            $http.post('http://localhost:8888/api/listUsers', myData);
+
+            $scope.init();
+
+            $uibModalInstance.dismiss('close');
+        }
+
+
     }
 
 });
