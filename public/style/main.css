@@ -44,3 +44,18 @@ html, body{
     margin-top: 20px;
     margin-bottom: 30px;
 }
+.custom-modal-body{
+    min-height: 250px;
+}
+.custom-modal-body p{
+    font-weight: bolder;
+}
+.custom-modal-body .row{
+    margin-top: 10px;
+}
+@media screen and (max-width: 600px){
+    html, body{
+        font-size: 10px;
+    }
+
+}

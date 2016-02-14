@@ -1,0 +1,59 @@
+<div class="modal-header">
+    <br>
+</div>
+<div class="modal-body custom-modal-body">
+        <div class="row">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-2">
+                <p>Name</p>
+            </div>
+            <div class="col-xs-7">
+                <input class="form-control"
+                        ng-model="newPerson.name">
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <p>Job title</p>
+        </div>
+        <div class="col-xs-7">
+            <input class="form-control"
+                    ng-model="newPerson.job">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <p>Age</p>
+        </div>
+        <div class="col-xs-7">
+            <input class="form-control"
+                    ng-model="newPerson.age">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <p>Nickname</p>
+        </div>
+        <div class="col-xs-7">
+            <input class="form-control"
+                    ng-model="newPerson.nick">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-2">
+            <p>Employee</p>
+        </div>
+        <div class="col-xs-7">
+            <input type="checkbox"
+                    ng-model="newPerson.employee">
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="teszt()">Cancel</button>
+</div>

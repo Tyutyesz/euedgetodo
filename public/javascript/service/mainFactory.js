@@ -9,7 +9,14 @@ app.factory('mainFactory', function( $http){
         getData : function(){
             return $http({
                 method: 'GET',
-                url: '/listUsers'
+                url: '/api/listUsers'
+            })
+        },
+        postData : function(){
+            return $http({
+                method: 'POST',
+                url: '/api/listUsers',
+                data : myData
             })
         }
     }

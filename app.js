@@ -4,14 +4,31 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 app.use('/scripts', express.static(__dirname + '/node_modules'));
 
-app.get('/listUsers', function (req, res) {
+var db = [];
+
+app.get('/api/listUsers', function (req, res) {
     fs.readFile("public/data/persons.json", 'utf8', function (err, data) {
         res.end( data );
+        db = data;
+        console.log(db);
     });
+});
+
+app.post('/api/listUsers', function (req, res) {
+
+    var myData = req.body;
+    //db.push(myData);
+    console.log(myData);
+
+    fs.writeFileSynch("public/data/persons.json", req.body.json);
 });
 
 app.get('/', function(req,res){
