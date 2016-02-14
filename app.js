@@ -17,18 +17,23 @@ var db = [];
 app.get('/api/listUsers', function (req, res) {
     fs.readFile("public/data/persons.json", 'utf8', function (err, data) {
         res.end( data );
-        db = data;
-        console.log(db);
     });
 });
 
 app.post('/api/listUsers', function (req, res) {
 
-    var myData = req.body;
-    //db.push(myData);
-    console.log(myData);
+    fs.readFile("public/data/persons.json", "utf-8", function(err, data) {
+        db = data;
 
-    fs.writeFileSynch("public/data/persons.json", req.body.json);
+        JSON.stringify(db);
+        //db.push(req.body);
+        console.log(db);
+    });
+   // var myData = req.body;
+    //db.push(myData);
+
+
+   // fs.writeFileSynch("public/data/persons.json", req.body.json);
 });
 
 app.get('/', function(req,res){
