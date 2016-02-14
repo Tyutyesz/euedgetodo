@@ -6,7 +6,7 @@ var app = angular.module('euEdgeApp');
 app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
 
     $scope.persons = [];
-    $scope.dumpData;
+    $scope.dumpData = '';
     $scope.isFirstView = true;
     //Handle success
     $scope.init = function(){
@@ -16,7 +16,7 @@ app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
         $scope.persons = data;
         console.log(data);
         if ($scope.isFirstView){
-            $scope.dumpData = $scope.dumpData;
+            $scope.dumpData = '';
             $scope.isFirstView = false;
         } else {
             $scope.dumpData = $scope.persons;
@@ -44,6 +44,14 @@ app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
         $scope.dumpData = $scope.persons;
     };
 
+    $scope.openGraph = function(){
+        var modalInstance = $uibModal.open({
+            templateUrl: 'views/graphModal.html',
+            controller: 'graphController',
+            scope: $scope,
+            size: 'lg'
+        });
+    };
 
 
 });

@@ -14,12 +14,13 @@
 <div class="container" ng-controller="mainController">
     <div class="row">
         <div class="col-xs-12">
-            <button class="btn btn-primary add-btn" ng-click="addPerson()">Add <i class="glyphicon glyphicon-plus"></i> </button>
+            <button class="btn btn-primary need-top-btn" ng-click="addPerson()">Add <i class="glyphicon glyphicon-plus"></i> </button>
+            <button class="btn btn-default need-top-btn" ng-click="openGraph()">Graph</button>
         </div>
     </div>
     <div class="col-xs-12 table-section">
         <div class="row head-row">
-                <div class="col-xs-5 col-sm-6">
+                <div class="col-xs-4 col-sm-6">
                     <p>
                         Name
                         <br>
@@ -42,7 +43,7 @@
         </div>
 
         <div class="row list-row" ng-repeat="items in persons track by $index">
-            <div class="col-xs-5 col-sm-6">
+            <div class="col-xs-4 col-sm-6">
                 <p>
                     {{items.name}}
                     <br>
@@ -65,18 +66,29 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-12 text-section">
-        <textarea class="form-control" rows="7">
+    <div class="row">
+
+    </div>
+    <div class="row ">
+        <div class="col-xs-12">
+            <h3>Data Dump</h3>
+        </div>
+        <div class="col-xs-12 text-section">
+             <textarea class="form-control" rows="7">
             {{dumpData | json}}
         </textarea>
+        </div>
+
     </div>
 </div>
 
 <script type="text/javascript" src="scripts/angular/angular.js"></script>
 <script type="text/javascript" src="scripts/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+<script type="text/javascript" src="javascript/libs/d3.min.js"></script>
 <script type="text/javascript" src="javascript/app.js"></script>
-<script type="text/javascript" src="javascript/service/mainFactory.js"></script>
+<script type="text/javascript" src="javascript/factory/mainFactory.js"></script>
 <script type="text/javascript" src="javascript/controller/mainController.js"></script>
 <script type="text/javascript" src="javascript/controller/modalController.js"></script>
+<script type="text/javascript" src="javascript/controller/graphController.js"></script>
 </body>
 </html>
