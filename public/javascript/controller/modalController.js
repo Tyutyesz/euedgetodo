@@ -25,9 +25,9 @@ app.controller('modalController', function($scope, $uibModalInstance, $http){
             $scope.notFilled = false;
             $http.post('http://localhost:8888/api/listUsers', myData);
 
-            $scope.init();
-
             $uibModalInstance.dismiss('close');
+
+            location.reload();
         }
 
 

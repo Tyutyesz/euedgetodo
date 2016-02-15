@@ -15,7 +15,7 @@ app.directive('d3Bar', function () {
                 .data(scope.data).enter().append("div")
                 .transition().ease("elastic")
                 .style("width", function(d) { return d.age*1.5 + '%'; })
-                .text(function(d) { return d.nick + ' (' + d.age + ')'; });
+                .text(function(d) { return d.name + ' (' + d.age + ')'; });
         }
     };
     return myBarChart;
