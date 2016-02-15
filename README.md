@@ -15,18 +15,20 @@ npm install
 The directory tree has to be like this
 ```
 rootDirectory
-  ???node_modules
-  ???public
-     ???data
-     ???fonts
-     ???javascript
-     ???style
-     ???views
-     ???index.html
-  ???server.js
-  ???.gitignore
-  ???package.json
-  ???README.md
+
+  ├──node_modules
+  ├──public
+     ├──data
+     ├──fonts
+     ├──javascript
+     ├──style
+     ├──views
+     ├──index.html
+  ├──server.js
+  ├──.gitignore
+  ├──package.json
+  └──README.md
+
 ```
 After that in the reporsitory root directory run:
 ```
