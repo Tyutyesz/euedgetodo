@@ -8,6 +8,7 @@ app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
     $scope.persons = [];
     $scope.dumpData = '';
     $scope.isFirstView = true;
+    $scope.isReverse = false;
     //Handle success
     $scope.init = function(){
         mainFactory.getData().success(handleSuccess);
@@ -25,6 +26,9 @@ app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
     //Get our person.json
     $scope.init();
 
+    $scope.setReverse = function(){
+        $scope.isReverse = !$scope.isReverse;
+    };
 
     $scope.addPerson = function(){
         var modalInstance = $uibModal.open({
@@ -34,8 +38,10 @@ app.controller('mainController', function($scope, mainFactory,$http, $uibModal){
         });
     };
 
-    $scope.deletePerson = function(index){
+    $scope.deletePerson = function(item){
         $scope.isFirstView = false;
+        var index = $scope.persons.indexOf(item);
+        console.log(index);
         $scope.persons.splice(index, 1);
         console.log($scope.persons);
         var deleteData = $scope.persons;

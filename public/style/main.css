@@ -16,6 +16,13 @@ h3{
 .need-top-btn{
     margin-top: 15px;
 }
+.sort-button, .sort-button:hover, .sort-button:active, .sort-button:focus{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    margin-top: -13px;
+}
 .table-section{
     margin-top: 30px;
     border: 1px solid #e9e9e9;
